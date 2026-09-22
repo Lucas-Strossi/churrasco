@@ -43,23 +43,17 @@ $resultado = $con->query($sql);
     </table>
     <form action="" method="get">
             <input type="text" placeholder="Pesquise um nome" name="nome"> <br>
-            <button type="submit">Pesquisar</button>
-        </form>
-        <h3>Filtros:</h3>
-        <form action="" method="post">
             <h4>Pagamentos: </h4>
-            Todos<input type="radio" name="pagamento" checked> <br>
-            Pagos<input type="radio" name="pagamento"> <br>
-            Pendente<input type="radio" name="pagamento"> <br>
+            Todos<input type="radio" name="pagamento" value="*" checked> <br>
+            Pagos<input type="radio" name="pagamento" value="Pago"> <br>
+            Pendente<input type="radio" name="pagamento" value="Pendente"> <br>
             <br>
             <h4>Presença: </h4>
-            Todos<input type="radio" name="presenca" checked> <br>
+            Todos<input type="radio" name="presenca" value="*" checked> <br>
             Confirmados<input type="radio" name="presenca"> <br>
             Não Confirmados<input type="radio" name="presenca"> <br>
             <br>
-            <button type="submit">Enviar</button>
-
-            
+            <button type="submit">Pesquisar</button>
         </form>
 </body>
 </html>
@@ -67,6 +61,10 @@ $resultado = $con->query($sql);
 <?php
 
     if(isset($_GET['nome'])){
+
+        if(isset($_GET['pagamento'])){
+            
+        }
         $nome = $_GET['nome'];
         $sqlNome = "SELECT nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%'";
         $resultadoNome = $con->query($sqlNome);
@@ -98,4 +96,5 @@ $resultado = $con->query($sql);
         echo "</tbody>";
         echo "</table>";
     }
+
 ?>
