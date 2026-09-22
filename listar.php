@@ -39,12 +39,28 @@ $resultado = $con->query($sql);
             }
         ?>
         </tbody>
-        <br>
-        <form action="" method="get">
+        <br>  
+    </table>
+    <form action="" method="get">
             <input type="text" placeholder="Pesquise um nome" name="nome"> <br>
             <button type="submit">Pesquisar</button>
         </form>
-    </table>
+        <h3>Filtros:</h3>
+        <form action="" method="post">
+            <h4>Pagamentos: </h4>
+            Todos<input type="radio" name="pagamento" checked> <br>
+            Pagos<input type="radio" name="pagamento"> <br>
+            Pendente<input type="radio" name="pagamento"> <br>
+            <br>
+            <h4>Presença: </h4>
+            Todos<input type="radio" name="presenca" checked> <br>
+            Confirmados<input type="radio" name="presenca"> <br>
+            Não Confirmados<input type="radio" name="presenca"> <br>
+            <br>
+            <button type="submit">Enviar</button>
+
+            
+        </form>
 </body>
 </html>
 
