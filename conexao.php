@@ -1,0 +1,14 @@
+<?php
+    $host = "localhost";
+    $usuario = "root";
+    $senha = "";
+    $banco = "catalogo_series";
+
+    $con = new mysqli($host, $usuario, $senha, $banco);
+
+    if ($con->connect_error) {
+        die("Falha na conexão: " . $con->connect_error);
+    }
+
+    $con->set_charset("utf8mb4");
+?>

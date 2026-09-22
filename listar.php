@@ -1,14 +1,17 @@
 <?php
 require_once 'conexao.php';
 
-while($usuario = $con->fetch_assoc()){
+$sql = "SELECT nome, turma, tipo_churrasco, confirmado, pago,  FROM participantes";
+$resultado = $con->query($sql);
+
+while($usuario = $resultado->fetch_assoc()){
     echo "<tr>
                 <td> {$usuario['nome']}</td>
                 <td>{$usuario['turma']}</td>
-                <td>{$usuario['tipo']}</td>
-                <td>{$usuario['presenca']}</td>
-                <td>{$usuario['pagamento']}</td>
-                <td>{$usuario['acoes']}</td>
+                <td>{$usuario['tipo_churrasco']}</td>
+                <td>{$usuario['confirmado']}</td>
+                <td>{$usuario['pago']}</td>
+                <td><a href='editar.php'>Editar</a> / <a href='excluir.php'>Excluir</a></td>
             </tr>";
 }
 ?>
