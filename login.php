@@ -6,7 +6,7 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="autenticar.php" method="post">
         <input type="text" placeholder="E-mail" name="email">
         <input type="password" placeholder="senha" name="senha">
         <button>Logar</button>
@@ -14,8 +14,10 @@
 </body>
 </html>
 <?php
-$email = $_POST['email']?? false;
-$senha = $_POST['senha']?? false;
 
 
+if(isset($_POST['email']) && isset($_POST['senha'])){
+    $email = $_POST['email']?? false;
+    $senha = $_POST['senha']?? false;    
+}
 ?>
