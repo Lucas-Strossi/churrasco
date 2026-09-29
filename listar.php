@@ -1,7 +1,7 @@
 <?php
 require_once 'conexao.php';
 
-$sql = "SELECT nome, turma, tipo_churrasco, confirmado, pago FROM participantes";
+$sql = "SELECT id, nome, turma, tipo_churrasco, confirmado, pago FROM participantes";
 $resultado = $con->query($sql);
 
 $nome = "";
@@ -39,7 +39,7 @@ $presenca = "";
                     <td>{$usuario['tipo_churrasco']}</td>
                     <td>{$usuario['confirmado']}</td>
                     <td>{$usuario['pago']}</td>
-                    <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
+                    <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']}'>Excluir</a></td>
                 </tr>";
             }
         ?>
@@ -122,7 +122,7 @@ $presenca = "";
                                 <td>{$usuario['tipo_churrasco']}</td>
                                 <td>{$usuario['confirmado']}</td>
                                 <td>{$usuario['pago']}</td>
-                                <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
+                                <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']}'>Excluir</a></td>
                             </tr>";
                     }
 
@@ -154,7 +154,7 @@ $presenca = "";
                                 <td>{$usuario['tipo_churrasco']}</td>
                                 <td>{$usuario['confirmado']}</td>
                                 <td>{$usuario['pago']}</td>
-                                <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
+                                <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']}'>Excluir</a></td>
                             </tr>";
                     }
 
@@ -186,7 +186,7 @@ $presenca = "";
                                 <td>{$usuario['tipo_churrasco']}</td>
                                 <td>{$usuario['confirmado']}</td>
                                 <td>{$usuario['pago']}</td>
-                                <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
+                                <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']}'>Excluir</a></td>
                             </tr>";
                     }
 
@@ -218,7 +218,7 @@ $presenca = "";
                                 <td>{$usuario['tipo_churrasco']}</td>
                                 <td>{$usuario['confirmado']}</td>
                                 <td>{$usuario['pago']}</td>
-                                <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
+                                <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']}'>Excluir</a></td>
                             </tr>";
                     }
 
@@ -247,32 +247,7 @@ $presenca = "";
                         <td>{$usuario['tipo_churrasco']}</td>
                         <td>{$usuario['confirmado']}</td>
                         <td>{$usuario['pago']}</td>
-                        <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
-                    </tr>";
-            }
-
-        echo "</tbody>";
-        echo "</table>";echo "<table border='1'>";
-        echo "<thead>
-            <tr>
-                <th>Nome</th>
-                <th>Turma</th>
-                <th>Tipo</th>
-                <th>Presença</th>
-                <th>Pagamento</th>
-                <th>Ações</th>
-            </tr>
-        </thead>";
-        echo "<tbody>";
-
-            while($usuario = $resultado->fetch_assoc()){
-                    echo "<tr>
-                        <td> {$usuario['nome']}</td>
-                        <td>{$usuario['turma']}</td>
-                        <td>{$usuario['tipo_churrasco']}</td>
-                        <td>{$usuario['confirmado']}</td>
-                        <td>{$usuario['pago']}</td>
-                        <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
+                        <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']}'>Excluir</a></td>
                     </tr>";
             }
 
