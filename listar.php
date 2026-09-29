@@ -55,6 +55,9 @@ $resultado = $con->query($sql);
             <br>
             <button type="submit">Pesquisar</button>
         </form>
+        <form action="logout.php">
+            <button type="submit">LogOut</button>
+        </form>
     </table>
 </body>
 </html>
