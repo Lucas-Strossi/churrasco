@@ -14,12 +14,12 @@
         <input type="text" name="acompanhamento" placeholder="acompanhamento"><br><br>
         
         <p>Presença confirmada:</p>
-        <span>Não <input type="radio" name="presenca" value=false></span>
-        <span>Sim <input type="radio" name="presenca" value=true></span><br><br>
+        <span>Não <input type="radio" name="presenca" value= "Não Confirmado"></span>
+        <span>Sim <input type="radio" name="presenca" value="Confirmado"></span><br><br>
         
         <p>Pagamento realizado:</p>
-        <span>Não <input type="radio" name="pagamento" value=false></span>
-        <span>Sim <input type="radio" name="pagamento" value=true></span><br><br>
+        <span>Não <input type="radio" name="pagamento" value='Pendente'></span>
+        <span>Sim <input type="radio" name="pagamento" value='Pago'></span><br><br>
         
         <button type="submit">cadastrar</button>
     </form>
