@@ -17,3 +17,4 @@ require_once 'conexao.php';
             header("Location: listar.php");
         }
     exit;
+?>
