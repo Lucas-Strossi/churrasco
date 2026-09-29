@@ -43,59 +43,18 @@ $resultado = $con->query($sql);
     </table>
     <form action="" method="get">
             <input type="text" placeholder="Pesquise um nome" name="nome"> <br>
-            <button type="submit">Pesquisar</button>
-        </form>
-        <h3>Filtros:</h3>
-        <form action="" method="post">
             <h4>Pagamentos: </h4>
-            Todos<input type="radio" name="pagamento" checked> <br>
-            Pagos<input type="radio" name="pagamento"> <br>
-            Pendente<input type="radio" name="pagamento"> <br>
+            Todos<input type="radio" name="pagamento" value="*" checked> <br>
+            Pagos<input type="radio" name="pagamento" value="Pago"> <br>
+            Pendente<input type="radio" name="pagamento" value="Pendente"> <br>
             <br>
             <h4>Presença: </h4>
-            Todos<input type="radio" name="presenca" checked> <br>
+            Todos<input type="radio" name="presenca" value="*" checked> <br>
             Confirmados<input type="radio" name="presenca"> <br>
             Não Confirmados<input type="radio" name="presenca"> <br>
             <br>
-            <button type="submit">Enviar</button>
-
-            
+            <button type="submit">Pesquisar</button>
         </form>
+    </table>
 </body>
 </html>
-
-<?php
-
-    if(isset($_GET['nome'])){
-        $nome = $_GET['nome'];
-        $sqlNome = "SELECT nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%'";
-        $resultadoNome = $con->query($sqlNome);
-
-        echo "<table border='1'>";
-        echo "<thead>
-            <tr>
-                <th>Nome</th>
-                <th>Turma</th>
-                <th>Tipo</th>
-                <th>Presença</th>
-                <th>Pagamento</th>
-                <th>Ações</th>
-            </tr>
-        </thead>";
-        echo "<tbody>";
-
-            while($usuario = $resultado->fetch_assoc()){
-                    echo "<tr>
-                        <td> {$usuario['nome']}</td>
-                        <td>{$usuario['turma']}</td>
-                        <td>{$usuario['tipo_churrasco']}</td>
-                        <td>{$usuario['confirmado']}</td>
-                        <td>{$usuario['pago']}</td>
-                        <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
-                    </tr>";
-            }
-
-        echo "</tbody>";
-        echo "</table>";
-    }
-?>
