@@ -61,13 +61,105 @@ $resultado = $con->query($sql);
 <?php
 
     if(isset($_GET['nome'])){
+        $nome = $_GET['nome'];
 
         if(isset($_GET['pagamento'])){
-            
+            if($_GET['pagamento'] == 'Pago'){
+                $sqlP = "SELECT * from participantes where pago = true and nome LIKE '%{$_GET['nome']}%'";
+                $resultadoP = $con->query($sqlP);
+
+                echo "<table border='1'>";
+                echo "<thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Turma</th>
+                        <th>Tipo</th>
+                        <th>Presença</th>
+                        <th>Pagamento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>";
+                echo "<tbody>";
+
+                    while($usuario = $resultadoP->fetch_assoc()){
+                            echo "<tr>
+                                <td> {$usuario['nome']}</td>
+                                <td>{$usuario['turma']}</td>
+                                <td>{$usuario['tipo_churrasco']}</td>
+                                <td>{$usuario['confirmado']}</td>
+                                <td>{$usuario['pago']}</td>
+                                <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
+                            </tr>";
+                    }
+
+                echo "</tbody>";
+                echo "</table>";
+            }
+
+            else if($_GET['pagamento'] == 'Pendente'){
+                $sqlP = "SELECT * from participantes where pago = false";
+                $resultadoP = $con->query($sqlP);
+
+                echo "<table border='1'>";
+                echo "<thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Turma</th>
+                        <th>Tipo</th>
+                        <th>Presença</th>
+                        <th>Pagamento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>";
+                echo "<tbody>";
+
+                    while($usuario = $resultadoP->fetch_assoc()){
+                            echo "<tr>
+                                <td> {$usuario['nome']}</td>
+                                <td>{$usuario['turma']}</td>
+                                <td>{$usuario['tipo_churrasco']}</td>
+                                <td>{$usuario['confirmado']}</td>
+                                <td>{$usuario['pago']}</td>
+                                <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
+                            </tr>";
+                    }
+
+                echo "</tbody>";
+                echo "</table>";
+            }
         }
-        $nome = $_GET['nome'];
-        $sqlNome = "SELECT nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%'";
-        $resultadoNome = $con->query($sqlNome);
+            else if($_GET['pagamento'] == '*'){
+                $sqlNome = "SELECT nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%'";
+                $resultadoNome = $con->query($sqlNome);
+
+                echo "<table border='1'>";
+                echo "<thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Turma</th>
+                        <th>Tipo</th>
+                        <th>Presença</th>
+                        <th>Pagamento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>";
+                echo "<tbody>";
+
+                    while($usuario = $resultadoNome->fetch_assoc()){
+                            echo "<tr>
+                                <td> {$usuario['nome']}</td>
+                                <td>{$usuario['turma']}</td>
+                                <td>{$usuario['tipo_churrasco']}</td>
+                                <td>{$usuario['confirmado']}</td>
+                                <td>{$usuario['pago']}</td>
+                                <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
+                            </tr>";
+                    }
+
+                echo "</tbody>";
+                echo "</table>";
+        }
+        
 
         echo "<table border='1'>";
         echo "<thead>
