@@ -55,6 +55,7 @@ $resultado = $con->query($sql);
             <br>
             <button type="submit">Pesquisar</button>
         </form>
+    </table>
 </body>
 </html>
 
