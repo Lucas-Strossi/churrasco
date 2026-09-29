@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <form action="autenticar.php" method="post">
-        <input type="text" placeholder="E-mail" name="email">
-        <input type="password" placeholder="senha" name="senha">
+        <h2>Sistema Churrasco 🍖</h2>
+        <img src="perfil.webp" alt="">
+        <input type="text" placeholder="E-mail" name="email" required>
+        <input type="password" placeholder="senha" name="senha" required>
         <button>Logar</button>
     </form>
 </body>
