@@ -17,6 +17,7 @@ $presenca = "";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <table>
@@ -46,18 +47,22 @@ $presenca = "";
         </tbody>
         <br>  
     </table>
-    <form action="" method="get">
-            <input type="text" placeholder="Pesquise um nome" name="nome" required> <br>
+    <form id="form_pesquisa" action="" method="get">
+            <input type="text" placeholder="Pesquise um nome" name="nome" required>
+            <div id="pagamentos">
             <h4>Pagamentos: </h4>
-            Todos<input type="radio" name="pagamento" value="*" checked> <br>
-            Pagos<input type="radio" name="pagamento" value="Pago"> <br>
-            Pendente<input type="radio" name="pagamento" value="Pendente"> <br>
-            <br>
+            Todos<input type="radio" name="pagamento" value="*" checked>
+            Pagos<input type="radio" name="pagamento" value="Pago">
+            Pendente<input type="radio" name="pagamento" value="Pendente">
+            </div>
+
+            <div id="presencas">
             <h4>Presença: </h4>
-            Todos<input type="radio" name="presenca" value="*" checked> <br>
-            Confirmados<input type="radio" name="presenca" value="Confirmado"> <br>
-            Não Confirmados<input type="radio" name="presenca" value="NConfirmado"> <br>
-            <br>
+            Todos<input type="radio" name="presenca" value="*" checked>
+            Confirmados<input type="radio" name="presenca" value="Confirmado">
+            Não Confirmados<input type="radio" name="presenca" value="NConfirmado">               
+            </div>
+
             <button type="submit">Pesquisar</button>
         </form>
         <form action="logout.php">

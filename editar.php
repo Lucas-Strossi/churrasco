@@ -18,6 +18,7 @@ $usuario = $resultado->fetch_assoc();
     <h2>Editar Dados do Participante</h2>
 
     <form action="atualizar.php" method="POST">
+        <!-- ID oculto para o atualizar.php saber quem ele vai modificar -->
         <input type="hidden" name="id" value="<?php echo $usuario['id']; ?>">
 
         <label>Nome:</label><br>
