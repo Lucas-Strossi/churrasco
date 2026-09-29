@@ -14,7 +14,7 @@ if (mysqli_num_rows($resultado) > 0) {
     $usuario = mysqli_fetch_assoc($resultado);
     
     $_SESSION['usuario_id'] = $usuario['id'];
-    header("Location: painel.php");
+    header("Location: listar.php");
     exit;
 } else {
     echo "E-mail ou senha incorretos! <a href='login.php'>Voltar</a>";
