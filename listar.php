@@ -194,7 +194,7 @@ $presenca = "";
                 echo "</table>";
         }
 
-        else if($pagamento == '*' && $presenca == '*'){
+        else if($pagamento !== '*' && $presenca !== '*'){
             $sqlNome = "SELECT nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%' and pagamento = {$pagamento} and presenca = {$presenca}";
                 $resultadoNome = $con->query($sqlNome);
 
@@ -247,7 +247,11 @@ $presenca = "";
                         <td>{$usuario['tipo_churrasco']}</td>
                         <td>{$usuario['confirmado']}</td>
                         <td>{$usuario['pago']}</td>
+<<<<<<< HEAD
                         <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']}'>Excluir</a></td>
+=======
+                        <td><a href='editar.php'>Editar</a> \ <a href='excluir.php'>Excluir</a></td>
+>>>>>>> fc0d7bd825204f50620ddbf89dadcff338a03c39
                     </tr>";
             }
 
