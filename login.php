@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <form action="autenticar.php" method="post">
+    <form id="form_login" action="autenticar.php" method="post">
         <h2>Sistema Churrasco 🍖</h2>
         <img src="perfil.webp" alt="">
         <input type="text" placeholder="E-mail" name="email" required>

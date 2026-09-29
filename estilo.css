@@ -7,8 +7,10 @@ body{
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    flex-direction: column;
+    gap: 20px;
 }
-form{
+#form_login{
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -38,4 +40,21 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+#form_pesquisa{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    padding: 30px;
+    border-radius: 20px;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+}
+td{
+    border: 1px black solid;
+}
+
+table{
+    border: 1px black solid;
 }

@@ -1,10 +1,8 @@
 <?php
 require_once 'conexao.php';
 
-// 1. Pega o ID que veio lá da listar.php
 $id = $_GET['id'];
 
-// 2. Busca a linha desse participante específico
 $sql = "SELECT id, nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE id = $id";
 $resultado = $con->query($sql);
 $usuario = $resultado->fetch_assoc();
@@ -20,10 +18,9 @@ $usuario = $resultado->fetch_assoc();
     <h2>Editar Dados do Participante</h2>
 
     <form action="atualizar.php" method="POST">
-        <!-- ID oculto para o atualizar.php saber quem ele vai modificar -->
+
         <input type="hidden" name="id" value="<?php echo $usuario['id']; ?>">
 
-        <!-- INPUTS DE TEXTO -->
         <label>Nome:</label><br>
         <input type="text" name="nome" value="<?php echo $usuario['nome']; ?>"><br><br>
 
@@ -33,7 +30,6 @@ $usuario = $resultado->fetch_assoc();
         <label>Tipo de Churrasco:</label><br>
         <input type="text" name="tipo_churrasco" value="<?php echo $usuario['tipo_churrasco']; ?>"><br><br>
 
-        <!-- INPUTS DE RADIO -->
         <h4>Presença:</h4>
         <input type="radio" name="confirmado" value="Confirmado" <?php echo ($usuario['confirmado'] == 'Confirmado') ? 'checked' : ''; ?>> Confirmado <br>
         <input type="radio" name="confirmado" value="Não Confirmado" <?php echo ($usuario['confirmado'] == 'Não Confirmado' || $usuario['confirmado'] == 'NConfirmado') ? 'checked' : ''; ?>> Não Confirmado <br>
