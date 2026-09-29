@@ -35,13 +35,16 @@ $presenca = "";
         <?php
             while($usuario = $resultado->fetch_assoc()){
                 echo "<tr>
-                    <td> {$usuario['nome']}</td>
-                    <td>{$usuario['turma']}</td>
-                    <td>{$usuario['tipo_churrasco']}</td>
-                    <td>{$usuario['confirmado']}</td>
-                    <td>{$usuario['pago']}</td>
-                    <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']} onclick='return confirm('Tem certeza que deseja excluir este participante?')'>Excluir</a></td>
-                </tr>";
+                        <td> {$usuario['nome']}</td>
+                        <td>{$usuario['turma']}</td>
+                        <td>{$usuario['tipo_churrasco']}</td>
+                        <td>{$usuario['confirmado']}</td>
+                        <td>{$usuario['pago']}</td>
+                        <td>
+                            <a href='editar.php?id={$usuario['id']}'>Editar</a> \ 
+                            <a href='excluir.php?id={$usuario['id']}' onclick=\"return confirm('Tem certeza que deseja excluir este participante?');\">Excluir</a>
+                        </td>
+                    </tr>";
             }
         ?>
         </tbody>
@@ -127,7 +130,10 @@ $presenca = "";
                                 <td>{$usuario['tipo_churrasco']}</td>
                                 <td>{$usuario['confirmado']}</td>
                                 <td>{$usuario['pago']}</td>
-                                <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']} onclick='return confirm('Tem certeza que deseja excluir este participante?')'>Excluir</a></td>
+                                <td>
+                                    <a href='editar.php?id={$usuario['id']}'>Editar</a> \ 
+                                    <a href='excluir.php?id={$usuario['id']}' onclick=\"return confirm('Tem certeza que deseja excluir este participante?');\">Excluir</a>
+                                </td>
                             </tr>";
                     }
 
@@ -159,7 +165,10 @@ $presenca = "";
                                 <td>{$usuario['tipo_churrasco']}</td>
                                 <td>{$usuario['confirmado']}</td>
                                 <td>{$usuario['pago']}</td>
-                                <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']} onclick='return confirm('Tem certeza que deseja excluir este participante?')'>Excluir</a></td>
+                                <td>
+                                    <a href='editar.php?id={$usuario['id']}'>Editar</a> \ 
+                                    <a href='excluir.php?id={$usuario['id']}' onclick=\"return confirm('Tem certeza que deseja excluir este participante?');\">Excluir</a>
+                                </td>
                             </tr>";
                     }
 
@@ -191,7 +200,10 @@ $presenca = "";
                                 <td>{$usuario['tipo_churrasco']}</td>
                                 <td>{$usuario['confirmado']}</td>
                                 <td>{$usuario['pago']}</td>
-                                <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']} onclick='return confirm('Tem certeza que deseja excluir este participante?')'>Excluir</a></td>
+                                <td>
+                                    <a href='editar.php?id={$usuario['id']}'>Editar</a> \ 
+                                    <a href='excluir.php?id={$usuario['id']}' onclick=\"return confirm('Tem certeza que deseja excluir este participante?');\">Excluir</a>
+                                </td>
                             </tr>";
                     }
 
@@ -223,7 +235,10 @@ $presenca = "";
                                 <td>{$usuario['tipo_churrasco']}</td>
                                 <td>{$usuario['confirmado']}</td>
                                 <td>{$usuario['pago']}</td>
-                                <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']} onclick='return confirm('Tem certeza que deseja excluir este participante?')'>Excluir</a></td>
+                                <td>
+                                    <a href='editar.php?id={$usuario['id']}'>Editar</a> \ 
+                                    <a href='excluir.php?id={$usuario['id']}' onclick=\"return confirm('Tem certeza que deseja excluir este participante?');\">Excluir</a>
+                                </td>
                             </tr>";
                     }
 
@@ -252,8 +267,12 @@ $presenca = "";
                         <td>{$usuario['tipo_churrasco']}</td>
                         <td>{$usuario['confirmado']}</td>
                         <td>{$usuario['pago']}</td>
-                        <td><a href='editar.php?id={$usuario['id']}'>Editar</a> \ <a href='excluir.php?id={$usuario['id']} onclick='return confirm('Tem certeza que deseja excluir este participante?')'>Excluir</a></td>
+                        <td>
+                            <a href='editar.php?id={$usuario['id']}'>Editar</a> \ 
+                            <a href='excluir.php?id={$usuario['id']}' onclick=\"return confirm('Tem certeza que deseja excluir este participante?');\">Excluir</a>
+                        </td>
                     </tr>";
+
             }
 
         echo "</tbody>";
