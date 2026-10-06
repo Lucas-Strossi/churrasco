@@ -261,12 +261,28 @@ $presenca = "";
         echo "<tbody>";
 
             while($usuario = $resultado->fetch_assoc()){
+                $pago = "";
+                $confirmado = "";
+
+                if($usuario['pago'] == 1){
+                    $pago = "Pago";
+                }
+                else {
+                    $pago = "Pendente";
+                }
+
+                if($usuario['confirmado'] == 1){
+                    $confirmado = "Confirmado";
+                }
+                else{
+                    $confirmado = "Não Confirmado";
+                }
                     echo "<tr>
                         <td> {$usuario['nome']}</td>
                         <td>{$usuario['turma']}</td>
                         <td>{$usuario['tipo_churrasco']}</td>
-                        <td>{$usuario['confirmado']}</td>
-                        <td>{$usuario['pago']}</td>
+                        <td>{$confirmado}</td>
+                        <td>{$pago}</td>
                         <td>
                             <a href='editar.php?id={$usuario['id']}'>Editar</a> \ 
                             <a href='excluir.php?id={$usuario['id']}' onclick=\"return confirm('Tem certeza que deseja excluir este participante?');\">Excluir</a>
