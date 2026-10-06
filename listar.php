@@ -107,7 +107,7 @@ $presenca = "";
         }
             
         if($pagamento == '*' && $presenca == '*'){
-            $sqlNome = "SELECT nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%'";
+            $sqlNome = "SELECT id, nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%'";
                 $resultadoNome = $con->query($sqlNome);
 
                 echo "<table border='1'>";
@@ -142,7 +142,7 @@ $presenca = "";
         }
 
         else if($pagamento !== '*' && $presenca == '*'){
-            $sqlNome = "SELECT nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%' and pagamento = {$pagamento}";
+            $sqlNome = "SELECT id, nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%' and pagamento = {$pagamento}";
                 $resultadoNome = $con->query($sqlNome);
 
                 echo "<table border='1'>";
@@ -177,7 +177,7 @@ $presenca = "";
         }
 
         else if($pagamento == '*' && $presenca !== '*'){
-            $sqlNome = "SELECT nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%' and presenca = {$presenca}";
+            $sqlNome = "SELECT id, nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%' and presenca = {$presenca}";
                 $resultadoNome = $con->query($sqlNome);
 
                 echo "<table border='1'>";
@@ -212,7 +212,7 @@ $presenca = "";
         }
 
         else if($pagamento !== '*' && $presenca !== '*'){
-            $sqlNome = "SELECT nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%' and pagamento = {$pagamento} and presenca = {$presenca}";
+            $sqlNome = "SELECT id, nome, turma, tipo_churrasco, confirmado, pago FROM participantes WHERE nome LIKE '%{$nome}%' and pagamento = {$pagamento} and presenca = {$presenca}";
                 $resultadoNome = $con->query($sqlNome);
 
                 echo "<table border='1'>";
